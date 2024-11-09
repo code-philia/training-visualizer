@@ -4,13 +4,19 @@
 
 > 🏗️ The extension is still in construction...
 
-This is still a demo, showing its feature in 2 ways:
+Run `Visualize Training Process` or with config `Configure and Visualize Training Process` command to start visulizing training process for a selected data folder.
 
-1. Use `Ctrl + P` in VS Code to look for a command called "Call an Editor". Execute it to see how the pure front-end of visualize is displayed using a webview.
-2. See on the left side bar of VS Code, and there is a new view container with the logo of a house, displaying a new customized webview.
-3. See in the panel on the lower part of VS Code, and there is a new view container, also displaying a new customized webview.
+## Development Guide: To be short
 
-## Development: How to run this extension from scratch?
+We are currently on `feat/vscode-extension` branch for visualizer extension development, where the source code is in the `extension` folder. Install the dependencies:
+
+```
+npm install
+```
+
+Then in VS Code debugger, use `Launch Visualizer Backend` option to launch backend, after which use `Run Extension` to debug the frontend.
+
+## Development Guide: For beginners
 
 > We would have assumed experienced front-end developers with decent VS Code knowledge to join this project, but usally young contributors are invited.
 > Thus, a more comprehensive guide is written to lead junior developers before they could be pro.
@@ -49,18 +55,16 @@ Open the project folder `time-travelling-visualizer` **as the workspace folder**
 >
 > ```json
 > // launch.json
-> ...
 > "args": [
 >    "--extensionDevelopmentPath=<your-own-relative-path-to-extension-folder>",
 >    "--disable-extensions",
 > ],
 > "outFiles": [
 >    "<your-own-relative-path-to-extension-folder>/out/**/*.js"
-> ],
-> ...
+> ],...
 >
 > // tasks.json
-> "path": "<your-own-relative-path-to-extension-folder>",
+> "path": "<your-own-relative-path-to-extension-folder>",...
 > ```
 
 ### Switch to extension development branch
@@ -89,11 +93,7 @@ In the *Run and Debug* tab <img src="resources/run-and-debug.png" alt="run-and-d
 If succeeded, you should
 
 + see a new view container in the *left activity bar* and a new view container in the *lower panel* of VS Code. If not seeing the panel, toggle it <img src="resources/toggle-panel.png" alt="toggle-panel" style="height: 2em; vertical-align: middle;"> on the top left of the window.
-+ `Ctrl+Shift+P` to search for the command "Call an Editor" and execute it to see customized editor containing the webview.
-
-The UI is as shown below.
-
-![demo-ui](resources/demo-ui.png)
++ `Ctrl+Shift+P` to search for the command "Visualize Training Process" and execute it to *specify a data folder and see a new editor for visualization.*
 
 ## Known Issues
 
