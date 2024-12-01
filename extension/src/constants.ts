@@ -1,5 +1,5 @@
 // NOTE only and always import this ES module and api.ts as an entire namespace:
-// `import * as config from './config';`
+// `import * as constants from './constants';`
 // and always import other modules by each symbol:
 // `import {xxx} from './yyy';`
 

@@ -1,5 +1,5 @@
 import * as vscode from 'vscode';
-import * as config from './config';
+import * as config from './constants';
 
 export const iconPaths: {[key: string]: string} = {
     "image-type": "imagesmode_24dp_5F6368_FILL0_wght400_GRAD0_opsz24.svg",

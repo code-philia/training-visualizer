@@ -1,9 +1,9 @@
 import * as vscode from 'vscode';
 import * as path from 'path';
-import * as config from '../config';
+import * as config from '../constants';
 import { readFileSync } from 'fs';
-import { handleMessageDefault } from '../control';
-import { getLiveWebviewHtml } from '../devLiveServer';
+import { handleMessageDefault } from './messageBroker';
+import { getLiveWebviewHtml } from '../dev/devServer';
 
 function replaceUri(html: string, webview: vscode.Webview, srcPattern: string, dst: string): string {
 	// replace all 'matched pattern' URI using webview.asWebviewUri,

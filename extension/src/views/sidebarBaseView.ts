@@ -1,7 +1,7 @@
 import * as vscode from 'vscode';
-import * as config from '../config';
-import { getLiveWebviewHtml } from '../devLiveServer';
-import { handleMessageDefault } from '../control';
+import * as config from '../constants';
+import { getLiveWebviewHtml } from '../dev/devServer';
+import { handleMessageDefault } from './messageBroker';
 
 
 export class SidebarWebviewViewProvider implements vscode.WebviewViewProvider {

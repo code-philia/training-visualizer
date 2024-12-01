@@ -1,4 +1,4 @@
-// serve as visualiation API and config
+// serve as visualiation API and configuration
 // for engineering config use config.ts
 
 // NOTE only and always import this ES module and api.ts as an entire namespace:
@@ -6,8 +6,7 @@
 // and always import other modules by each symbol:
 // `import {xxx} from './yyy';`
 
-// TODO change this type name to 'params' or not?
-export type BasicVisualizationConfig = {
+export type BasicVisualizationOptions = {
     dataType: string,
 	taskType: string,
 	contentPath: string,
@@ -26,7 +25,7 @@ export class StringSelection {
     }
 }
 
-export class Types {
+export class VisualizationTypes {
     static readonly VisualizationDataType: StringSelection = new StringSelection('Image', 'Text');
     static readonly VisualizationTaskType: StringSelection = new StringSelection('Classification', 'Non-Classification');
     static readonly VisualizationMethod: StringSelection = new StringSelection('TrustVis');
