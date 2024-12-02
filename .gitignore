@@ -14,6 +14,7 @@ trustvis/__pycache__/
 VisTool/Backend/server/__pycache__
 
 training_dynamic/
+training_workspace/
 
 Tool/singleVis/eval/__pycache__/__init__.cpython-37.pyc
 Tool/singleVis/eval/__pycache__/evaluate.cpython-37.pyc

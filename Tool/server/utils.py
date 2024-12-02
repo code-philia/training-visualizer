@@ -559,12 +559,12 @@ def get_umap_neighborhood_epoch_projection(content_path: str, epoch: int, predic
     intra_sim_top_k = np.load(intra_sim_file).tolist()
     
     # Read and return attention
-    attention_folder = os.path.join(data_folder,'aa_possim') # gcb_tokens_temp/Model/aa_possim
-    code_attention_file = os.path.join(attention_folder,'train_code_attention_aa.npy')
-    nl_attention_file = os.path.join(attention_folder,'train_nl_attention_aa.npy')
+    # attention_folder = os.path.join(data_folder,'aa_possim') # gcb_tokens_temp/Model/aa_possim
+    # code_attention_file = os.path.join(attention_folder,'train_code_attention_aa.npy')
+    # nl_attention_file = os.path.join(attention_folder,'train_nl_attention_aa.npy')
     
-    code_attention = np.load(code_attention_file).tolist()
-    nl_attention = np.load(nl_attention_file).tolist()
+    # code_attention = np.load(code_attention_file).tolist()
+    # nl_attention = np.load(nl_attention_file).tolist()
     
     # Read the bounding box (TODO necessary?)
     bounding_file = os.path.join(epoch_folder, 'scale.npy')
@@ -578,8 +578,8 @@ def get_umap_neighborhood_epoch_projection(content_path: str, epoch: int, predic
         'tokens': comment_tokens + code_tokens,
         'inter_sim_top_k': inter_sim_top_k,
         'intra_sim_top_k': intra_sim_top_k,
-        'code_attention': code_attention,
-        'nl_attention': nl_attention,
+        # 'code_attention': code_attention,
+        # 'nl_attention': nl_attention,
         'bounding': {
             'x_min': x_min,
             'y_min': y_min,
