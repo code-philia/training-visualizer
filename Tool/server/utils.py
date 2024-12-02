@@ -636,8 +636,8 @@ def get_umap_neighborhood_epoch_projection(content_path: str, epoch: int, predic
     code_attention_file = os.path.join(attention_folder,'train_code_attention_aa.npy')
     nl_attention_file = os.path.join(attention_folder,'train_nl_attention_aa.npy')
     
-    code_attention = np.load(code_attention_file).tolist()
-    nl_attention = np.load(nl_attention_file).tolist()
+    code_attention = np.load(code_attention_file).tolist() if os.path.exists(code_attention_file) else []
+    nl_attention = np.load(nl_attention_file).tolist() if os.path.exists(nl_attention_file) else []
     
     # Read the bounding box (TODO necessary?)
     bounding_file = os.path.join(epoch_folder, 'scale.npy')

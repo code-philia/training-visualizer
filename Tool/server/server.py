@@ -1,3 +1,4 @@
+from attr import dataclass
 from flask import request, Flask, jsonify, make_response,render_template,send_from_directory
 from flask_cors import CORS, cross_origin
 import os
@@ -22,6 +23,14 @@ app.config['CORS_HEADERS'] = 'Content-Type'
 # TODO:from where to get config path?
 config_file ='/path/to/config.json'
 
+@dataclass
+class TempConfig:
+    TASK_TYPE: str | None = None
+    CONTENT_PATH: str | None = None
+    EPOCH_START: int = 0
+    EPOCH_END: int = 30
+    EPOCH_PERIOD: int = 1
+
 @app.route("/", methods=["GET", "POST"])
 def GUI():
     return send_from_directory(app.static_folder, 'index.html')
@@ -30,7 +39,7 @@ def GUI():
 @app.route('/get_itertaion_structure', methods=["POST", "GET"])
 @cross_origin()
 def get_tree():
-    config = initailize_config(config_file)
+    config = TempConfig()
     json_data = []
     previous_epoch = ""
     for epoch in range(config.EPOCH_START, config.EPOCH_END + 1, config.EPOCH_PERIOD):
@@ -52,11 +61,12 @@ def update_projection():
     predicates = req['predicates']
     indicates = list(range(100)) # we now don't use req['selectedPoints'] to filter in backend
 
-    # load config from config_file
-    config = initailize_config(config_file)
+    # load config from config_file    
+    config = TempConfig(req['taskType'], req['contentPath'])
     
     # load visualization result of one epoch
     if config.TASK_TYPE == 'classification' or config.TASK_TYPE == 'non-classification':
+
         embedding_2d, grid, decision_view, label_name_dict, label_color_list, label_list, max_iter, training_data_index, \
         testing_data_index, eval_new, prediction_list, selected_points, error_message_projection, color_list, \
             confidence_list = update_epoch_projection(config, iteration, predicates, indicates)
