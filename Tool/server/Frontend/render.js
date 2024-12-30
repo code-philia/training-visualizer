@@ -22,13 +22,20 @@ let previousMousePosition = {
 };
 let lockIndex = false;
 
+const p3d = (idx, posArr) => {
+    let x = posArr.getX(idx);
+    let y = posArr.getY(idx);
+    let z = posArr.getZ(idx);
+    return { x, y, z };
+};
+
 const lineTwoPoints = (ctx, p1, p2) => {
     let points = [];
     points.push(new THREE.Vector3(p1.x, p1.y, p1.z));
     points.push(new THREE.Vector3(p2.x, p2.y, p2.z));
     let geometry = new THREE.BufferGeometry().setFromPoints(points);
     ctx.scene.hoverLine = new THREE.Line(geometry, ctx.lineMaterial);
-    lines.push(ctx.scene.hoverLine);
+    ctx.lines.push(ctx.scene.hoverLine);
     ctx.scene.add(ctx.scene.hoverLine);
 };
 
@@ -590,13 +597,6 @@ class PlotCanvas {
     __addHoverRevealingControl() {
         let raycaster = new THREE.Raycaster();
         let mouse = new THREE.Vector2();
-
-        const p3d = (idx, posArr) => {
-            let x = posArr.getX(idx);
-            let y = posArr.getY(idx);
-            let z = posArr.getZ(idx);
-            return { x, y, z };
-        };
 
         this.lines = [];
         this.lineMaterial = new THREE.LineBasicMaterial({ color: 0xaaaaaa });

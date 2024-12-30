@@ -298,10 +298,12 @@
         <div id="footer">
             <el-tabs v-model="activeTab" class="footer-tabs">
                 <el-tab-pane label="Timeline" name="timeline">
-                    <div style="display: flex; align-items: end;">
-                        <svg id="timeLinesvg" width="0" height="0"></svg>
-                        <button id="play-timeline-button" v-if="document.getElementById('timeLinesvg')?.classList?.contains('active')"
-                            @mousedown="playTimeline = !playTimeline" :class="playTimeline ? 'pause' : 'play'"/>
+                    <div id="timeline-container">
+                        <div id="timeline">
+                            <svg id="timeLinesvg"></svg>
+                            <button id="play-timeline-button" v-if="document.getElementById('timeLinesvg')?.classList?.contains('active')"
+                                @mousedown="playTimeline = !playTimeline" :class="playTimeline ? 'pause' : 'play'"/>
+                        </div>
                     </div>
                 </el-tab-pane><!--
                 --><el-tab-pane label="Tokens Overview" name="tokens-overview">

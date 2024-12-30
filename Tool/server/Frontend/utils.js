@@ -434,9 +434,9 @@ function drawTimeline(res, flag) {
       svgWidth = 1000;
   }
   // svgWidth = 1000
-  svgDom.style.width = svgWidth + 50;
+  svgDom.style.width = svgWidth + 50 + 'px';
   if (window.sessionStorage.selectedSetting !== 'active learning' && window.sessionStorage.selectedSetting !== 'dense al') {
-      svgDom.style.height = 60;
+      svgDom.style.height = 60 + 'px';
       // svgDom.style.width = 2000
   }
 

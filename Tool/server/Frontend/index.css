@@ -321,9 +321,10 @@ pre.highlight {
     flex: 1;
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
     min-height: 0;
+
+    overflow: auto;
 }
 
 .tokens-overview-content {
@@ -336,11 +337,10 @@ pre.highlight {
 }
 
 .tokens-overview-pre {
-    flex: 1;
-    min-width: 0;
+    flex: 1 1 0%;
 
-    max-width: 40vw;
-    margin: 0.5em;
+    max-width: 30vw;
+    margin: 0.5em 1em;
     padding: 0.5em;
     box-sizing: content-box;
     overflow-y: auto;
@@ -350,4 +350,25 @@ pre.highlight {
     font-weight: bold;
     color: red;
     background-color: rgba(0, 255, 255, 0.3);
+}
+
+#timeline-container {
+    flex: 1 0 auto;
+    width: fit-content;
+    padding: 0 1em;
+}
+
+#timeline {
+    display: flex;
+    align-items: center;
+}
+
+#timeLinesvg {
+    width: 0px;
+    height: 0px;
+    flex: 1 0 auto;
+}
+
+#play-timeline-button {
+    flex: 1 0 auto;
 }
