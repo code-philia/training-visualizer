@@ -360,7 +360,7 @@ pre.highlight {
 
 #timeline {
     display: flex;
-    align-items: center;
+    align-items: end;
 }
 
 #timeLinesvg {
